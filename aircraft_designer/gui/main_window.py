@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QTabWidget
 
 from ..core.module_loader import load_modules
+from ..modules.cahier_des_charges.widget import CahierDesChargesWidget
 
 
 class MainWindow(QMainWindow):
@@ -14,7 +15,18 @@ class MainWindow(QMainWindow):
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
-        self.modules = load_modules(project)
-        for module in self.modules:
+        self.modules = []
+        for module in load_modules(project):
             widget = module.get_widget()
-            self.tabs.addTab(widget, module.__class__.__name__)
+            if hasattr(widget, "load_from_project"):
+                widget.load_from_project(project.path)
+            self.tabs.addTab(
+                widget,
+                getattr(widget, "module_name", module.__class__.__name__),
+            )
+            self.modules.append(widget)
+
+        cahier_widget = CahierDesChargesWidget()
+        cahier_widget.load_from_project(project.path)
+        self.tabs.addTab(cahier_widget, cahier_widget.module_name)
+        self.modules.append(cahier_widget)
