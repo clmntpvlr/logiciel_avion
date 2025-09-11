@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QMainWindow, QTabWidget
 
 from ..core.module_loader import load_modules
 from ..modules.cahier_des_charges.widget import CahierDesChargesWidget
+from ..modules.technologies.technologies_controller import TechnologiesController
 
 
 class MainWindow(QMainWindow):
@@ -25,6 +26,9 @@ class MainWindow(QMainWindow):
                 getattr(widget, "module_name", module.__class__.__name__),
             )
             self.modules.append(widget)
+        tech_controller = TechnologiesController(project.path)
+        self.tabs.addTab(tech_controller.widget, tech_controller.widget.module_name)
+        self.modules.append(tech_controller.widget)
 
         cahier_widget = CahierDesChargesWidget()
         cahier_widget.load_from_project(project.path)
