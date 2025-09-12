@@ -16,3 +16,9 @@
 ## Terminée
 - [2025-09-09] Créer le module `cahier_des_charges` avec ses deux sous-parties
 - [2025-09-12] Créer le module `database` (UI + logique)
+- [2025-09-12] Créer le module `stat`
+
+## Idées / Backlog
+- Corrélations multi-variables et régressions simples
+- Graphes comparatifs multi-ensembles
+- Templates d’analyses réutilisables
