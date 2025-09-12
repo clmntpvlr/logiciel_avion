@@ -30,3 +30,9 @@ navigation, test de sauvegarde/chargement.
 - 2025-09-12 — Ajout du module **Database** (UI + logique complète).
   - Structure en 3 colonnes, repo SQLite global, import/export JSON.
   - Intégration au menu principal, logs, validations et dialogues.
+## [2025-09-12] Module Constraint Analysis v1 (sans marges)
+- Création du module `modules/constraint_analysis/` : UI PyQt5, calculs (TO, LDG, Climb, Cruise, Turn, Ceiling), enveloppe et point recommandé (sans marges).
+- Tracé Matplotlib avec zone faisable, export PNG/SVG.
+- Persistance par projet via `state_manager.py` (JSON).
+- Export Excel avec feuilles Inputs/Curves/Envelope/Summary et insertion du graphique.
+- Intégrations : stub import Database et Tech Packs, enregistrement dans le registre de modules.
