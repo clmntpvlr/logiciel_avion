@@ -1,5 +1,6 @@
 # Journal de développement
 
+- 2025-09-12 — Ajout du module Conceptual Sketches permettant de stocker des images et croquis par projet.
 - 2025-09-12 — Module Stat v1
   - portée : création du module Stat pour analyses statistiques par projet.
   - fichiers créés :

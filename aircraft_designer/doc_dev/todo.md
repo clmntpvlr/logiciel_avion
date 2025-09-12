@@ -6,6 +6,7 @@
 - [ ] Valider l’ergonomie avec des jeux de données réels.
 - [ ] Améliorer la recherche (filtre multi-champs, RegEx).
 - [ ] Ajouter un export CSV des valeurs avion x caractéristiques.
+- [ ] Créer le module `Statistics` pour effectuer des analyses personnalisées sur la base de données commune, avec sauvegarde des sélections propres à chaque projet.
 
 ## À faire
 - [ ] Export XLSX natif (ou via module global d’export)
@@ -17,6 +18,7 @@
 - [2025-09-09] Créer le module `cahier_des_charges` avec ses deux sous-parties
 - [2025-09-12] Créer le module `database` (UI + logique)
 - [2025-09-12] Créer le module `stat`
+- [2025-09-12] Créer le module `Conceptual Sketches`
 
 ## Idées / Backlog
 - Corrélations multi-variables et régressions simples
