@@ -17,6 +17,7 @@ def get_registered_modules() -> List[Tuple[str, Any]]:
     from .conceptual_sketches.conceptual_sketches import (
         ConceptualSketchesModule,
     )
+    from .constraint_analysis.module import ConstraintAnalysisModule
 
     return [
         (DatabaseWidget.module_name, DatabaseWidget),
@@ -25,4 +26,5 @@ def get_registered_modules() -> List[Tuple[str, Any]]:
             ConceptualSketchesModule.module_name,
             ConceptualSketchesModule,
         ),
+        (ConstraintAnalysisModule.module_name, ConstraintAnalysisModule),
     ]
