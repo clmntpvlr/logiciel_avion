@@ -2,6 +2,10 @@
 
 ## En cours
 - [ ] Créer le module technologies (catégories éditables, persistance JSON, export stub)
+- [ ] Intégrer le module Database avec le futur module d’analyses statistiques (sélections par projet).
+- [ ] Valider l’ergonomie avec des jeux de données réels.
+- [ ] Améliorer la recherche (filtre multi-champs, RegEx).
+- [ ] Ajouter un export CSV des valeurs avion x caractéristiques.
 
 ## À faire
 - [ ] Export XLSX natif (ou via module global d’export)
@@ -11,3 +15,4 @@
 
 ## Terminée
 - [2025-09-09] Créer le module `cahier_des_charges` avec ses deux sous-parties
+- [2025-09-12] Créer le module `database` (UI + logique)

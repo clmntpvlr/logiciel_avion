@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QMainWindow, QTabWidget
 from ..core.module_loader import load_modules
 from ..modules.cahier_des_charges.widget import CahierDesChargesWidget
 from ..modules.technologies.technologies_controller import TechnologiesController
+from ..modules.database import DatabaseWidget
 
 
 class MainWindow(QMainWindow):
@@ -26,6 +27,9 @@ class MainWindow(QMainWindow):
                 getattr(widget, "module_name", module.__class__.__name__),
             )
             self.modules.append(widget)
+        db_widget = DatabaseWidget()
+        self.tabs.addTab(db_widget, db_widget.module_name)
+        self.modules.append(db_widget)
         tech_controller = TechnologiesController(project.path)
         self.tabs.addTab(tech_controller.widget, tech_controller.widget.module_name)
         self.modules.append(tech_controller.widget)
