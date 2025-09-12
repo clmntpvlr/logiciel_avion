@@ -14,8 +14,15 @@ def get_registered_modules() -> List[Tuple[str, Any]]:
     """Return list of available global modules."""
     from .database import DatabaseWidget  # imported lazily to avoid Qt dependency in tests
     from .stat.stat_module import StatModule
+    from .conceptual_sketches.conceptual_sketches import (
+        ConceptualSketchesModule,
+    )
 
     return [
         (DatabaseWidget.module_name, DatabaseWidget),
         (StatModule.module_name, StatModule),
+        (
+            ConceptualSketchesModule.module_name,
+            ConceptualSketchesModule,
+        ),
     ]
