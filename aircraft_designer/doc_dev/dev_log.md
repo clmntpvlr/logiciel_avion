@@ -1,5 +1,12 @@
 # Journal de développement
 
+- 2025-09-12 — Ajout : créateur de raccourci Bureau cross-platform
+  - Création de tools/shortcut_creator.py (Windows .lnk via PowerShell/COM; Linux .desktop; macOS .app via osacompile avec fallback .command).
+  - Création de scripts/create_desktop_shortcut.py (CLI).
+  - Détection de l’exécutable packagé dans dist/, sinon fallback python main.py.
+  - Gestion d’icône optionnelle (défaut dans assets/).
+  - Tests manuels effectués (voir section Tests dans ce prompt).
+
 - 2025-09-12 — Ajout du module Conceptual Sketches permettant de stocker des images et croquis par projet.
 - 2025-09-12 — Module Stat v1
   - portée : création du module Stat pour analyses statistiques par projet.

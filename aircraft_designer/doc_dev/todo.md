@@ -23,6 +23,7 @@
 - [2025-09-12] Créer le module `database` (UI + logique)
 - [2025-09-12] Créer le module `stat`
 - [2025-09-12] Créer le module `Conceptual Sketches`
+- [2025-09-12] Créer le raccourci Bureau cross-platform
 - [x] Créer le module constraint_analysis v1 (UI, calculs, export, persistance) — sans marges
 
 ## Idées / Backlog
