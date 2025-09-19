@@ -1,5 +1,10 @@
 # Journal de développement
 
+- 2025-09-13 — Ajout : script de packaging PyInstaller
+  - Création de `scripts/build_executable.py`.
+  - Génère un exécutable (onefile par défaut) ou un dossier onedir.
+  - Gestion optionnelle de l'icône et nettoyage build/dist.
+  - Ajout automatique des ressources `assets/` et `ui/` si présents.
 - 2025-09-12 — Ajout : créateur de raccourci Bureau cross-platform
   - Création de tools/shortcut_creator.py (Windows .lnk via PowerShell/COM; Linux .desktop; macOS .app via osacompile avec fallback .command).
   - Création de scripts/create_desktop_shortcut.py (CLI).
