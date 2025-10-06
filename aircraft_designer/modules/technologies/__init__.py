@@ -1,1 +1,0 @@
-"""Module Technologies à utiliser."""
