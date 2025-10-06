@@ -1,0 +1,67 @@
+{
+    "nom": "BaAer Guri",
+    "type": "Two-seat ultralight",
+    "structure": "Combines metal and composites. Wing structure of 6061-T6 aluminium tube with fabric covering. Leading edge in glass fibre. Glass fibre monocoque cockpit structure. Tailboom of 15 cm aluminium tube.",
+    "train": "Fixed tricycle or tailwheel, optional composite spring main legs, optional floats and fairings",
+    "moteurs": [
+        {
+            "modele": "Volkswagen 1800 cc",
+            "puissance_hp": 65,
+            "puissance_kw": 48.5
+        },
+        {
+            "modele": "Rotax 503",
+            "puissance_hp": 50,
+            "puissance_kw": 37.3
+        },
+        {
+            "modele": "HKS 700E",
+            "puissance_hp": 60,
+            "puissance_kw": 44.7
+        },
+        {
+            "modele": "Rotax 582",
+            "puissance_hp": 64,
+            "puissance_kw": 47.7
+        },
+        {
+            "modele": "Rotax 912",
+            "puissance_hp": 80,
+            "puissance_kw": 59.7
+        }
+    ],
+    "equipement": [
+        "Optional ballistic parachute"
+    ],
+    "dimensions": {
+        "externe": {
+            "envergure_m": 10.0,
+            "longueur_m": 6.0
+        },
+        "interne": {
+            "cockpit_largeur_m": 1.05
+        }
+    },
+    "surfaces": {
+        "surface_ailes_m2": 14.0
+    },
+    "masses": {
+        "a_vide_kg": 225,
+        "bagages_max_kg": 15,
+        "carburant_max_kg": 50,
+        "max_decollage_kg": 450
+    },
+    "performances": {
+        "vitesse_max_kmh": 190,
+        "vitesse_croisiere_kmh": 130,
+        "vitesse_decrochage_kmh": 55,
+        "taux_monte_ms": 4.1,
+        "autonomie_km": 500,
+        "distance_decollage_m": 100,
+        "distance_decollage_obstacle_15m_m": 150,
+        "g_limits": {
+            "positif": 6,
+            "negatif": -4
+        }
+    }
+}

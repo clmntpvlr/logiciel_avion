@@ -1,0 +1,64 @@
+{
+  "nom": "AAK Hornet",
+  "type": "Side-by-side kitbuilt STOL aircraft",
+  "programme": "Prototype (19-4097) first shown 2004; completed 2007 (Rotax 914). Variants: Hornet AG, Super Hornet, Bushman.",
+  "structure": "All-metal semi-monocoque; aluminium alloys (2024T3, 6061T6) and 4130 steel.",
+  "train": "Fixed, nosewheel or tailwheel; spring cantilever main legs; optional disc brakes.",
+  "moteurs": [
+    {
+      "plage_puissance_kw": [
+        44.7,
+        89.5
+      ],
+      "plage_puissance_hp": [
+        60,
+        120
+      ],
+      "type": "piston (range)"
+    },
+    {
+      "modele": "Rotax 912 UL",
+      "puissance_hp": 80,
+      "puissance_kw": 59.6
+    },
+    {
+      "modele": "Rotax 912 ULS",
+      "puissance_hp": 100,
+      "puissance_kw": 73.5
+    },
+    {
+      "modele": "Rotax 914",
+      "puissance_hp": 115,
+      "puissance_kw": 84.6
+    }
+  ],
+  "dimensions": {
+    "externe": {
+      "envergure_m": 8.8,
+      "longueur_m": 6.4,
+      "hauteur_m": 2.2
+    },
+    "interne": {
+      "cockpit_largeur_m": 1.1
+    }
+  },
+  "masses": {
+    "a_vide_kg": 310,
+    "max_decollage_kg": 600,
+    "bagages_max_kg": 15
+  },
+  "carburant": {
+    "capacite_l": 100,
+    "max_poids_kg": 58
+  },
+  "performances": {
+    "vne_kmh": 185,
+    "vitesse_niveau_max_kmh": 167,
+    "vitesse_croisiere_kmh": 152,
+    "vitesse_decrochage_kmh": 63,
+    "taux_monte_ms": 4.1,
+    "distance_decollage_roulage_m": 40,
+    "distance_atterrissage_roulage_m": 32,
+    "endurance_h": 4
+  }
+}
