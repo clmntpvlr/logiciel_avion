@@ -1,0 +1,49 @@
+{
+  "nom": "Hughes Australian Ligtwing GR-912",
+  "caracteristiques": {
+    "dimensions": {
+      "longueur_m": 5.68,
+      "envergure_m": 9.50,
+      "hauteur_m": 1.90,
+      "surface_alaire_m2": 15.35,
+      "longueur_cabine_m": 2.20,
+      "largeur_cabine_m": 1.06,
+      "hauteur_cabine_m": 1.30
+    },
+    "poids": {
+      "masse_vide_kg": 295,
+      "masse_max_decollage_roues_kg": 600,
+      "masse_max_decollage_flotteurs_kg": 650,
+      "masse_max_decollage_certifie_kg": 480,
+      "masse_max_atterrissage_kg": null,
+      "masse_carburant_max_kg": 72
+    },
+    "performances": {
+      "vitesse_croisiere_max_kmh": 157,
+      "vitesse_croisiere_economique_kmh": 93,
+      "vitesse_maximale_kmh": 176,
+      "vitesse_decrochage_kmh": 65,
+      "autonomie_km": 400,
+      "endurance_h": null,
+      "plafond_m": null,
+      "taux_montee_S_L_mps": 4.067,
+      "distance_decollage_m": 100,
+      "distance_atterrissage_m": 80,
+      "limites_g": [6, -4]
+    },
+    "motorisation": {
+      "puissance_min_kw": 73.5,
+      "puissance_max_kw": 59.6,
+      "nombre_moteurs": 1
+    },
+    "train": {
+      "type": ["classique", "flotteurs"],
+      "retractable": false
+    },
+    "capacite": {
+      "nombre_de_passagers": 1
+    }
+  },
+  "notes": "TYPE : cote à cote. PROGRAMME : La construction du prototype Australian LightWing (ALW) (25-0032) a débuté en 1985 et a effectué son premier vol en juin 1986 ; initialement équipé d'un moteur Rotax 582 UL de 47,8 kW (64,1 ch) (d'où sa commercialisation sous le nom de GR-582) ; de nombreux exemplaires ont été vendus conformément aux exigences de la norme CAO 95 Pt 25 ; également produit selon les réglementations de construction amateur ou CAO 101 Pt 28 en configurations à roulette de queue non rétractable et à double flotteur ; premier modèle amphibie livré en 1990. Certificat de type délivré le 25 septembre 1998. VERSIONS ACTUELLES : GR-912 : Version à roulette de queue. Tel que décrit. GR-912-T : Version à train d'atterrissage tricycle ; désignation commerciale Sport 2000 ; décrit séparément LightWing Truck : Ajouté à la gamme en 2002 ; utilise la même aile associée à un fuselage plus long de 45 cm (1 pi 5 po) avec un espace supplémentaire derrière les sièges pouvant accueillir deux sièges supplémentaires ; le renforcement a rendu inutile le recours à des renforts métalliques sur l'empennage. Largeur de la cabine augmentée de 15 cm Propulsé par un moteur Rotax 914 de 84,6 kW (113,4 ch) ; acceptera un Jabiru 5100 huit cylindres de 149 kW (200 ch). Initialement proposé en configuration à roulette de queue, la version à roulette avant étant proposée à partir de 2003. CLIENTS : Plus de 160 appareils (toutes versions confondues) livrés fin 2006 ; plus de 90 % immatriculés selon les règles RA-Aus. A revendiqué 29 % du marché australien des avions d'entraînement légers biplaces avec le GR-912. COÛTS : GR-912 103 000 AUD construit en usine ; volets 1 900 AUD supplémentaires (2009). CARACTÉRISTIQUES DE CONCEPTION : Aile haute à corde constante avec extrémités Hoerner et haubans simples ou en V (avec haubans auxiliaires) de chaque côté. Empennage haubané avec petit congé de dérive. Surfaces d'empennage non aérodynamiques. Section d'aile Clark Y modifiée. Temps de construction estimé à 500 heures, réduit à 300 heures avec les versions à construction rapide. COMMANDES DE VOL : Conventionnelles et manuelles. Volets en option STRUCTURE : Fuselage et empennage en tubes d'acier 4130 soudés ; revêtement composite et polyfibre. TRAIN D'ATTERRISSAGE : Type de roulette de queue : fixe. Flotteurs amphibies en option avec roues principales rétractables et roulettes de queue non rétractables (ces dernières faisant également office de gouvernails). GROUPE PROPULSEUR : Un moteur Rotax 912 ULS à quatre cylindres à plat de 73,5 kW (98,6 ch) entraînant une hélice bipale ou tripale via un démultiplicateur de 2,27:1 : hélice bipale à pas fixe en bois Aerofiber recommandée ; peut également être équipée d'un Rotax 912UL de 59,6 kW (79,9 ch). Capacité initiale du réservoir de carburant de 60 litres (15,8 gallons américains : 13,2 gallons impériaux) dont 57 litres (15,1 gallons américains ; 12,5 gallons impériaux) sont utilisables ; les versions ultérieures ont une capacité de 100 litres (26,4 gallons américains ; 22,0 gallons impériaux), dont 98 litres (25,9 gallons américains ; 21,6 gallons impériaux) sont utilisables. Capacité d'huile de 3,0 litres (0,8 gallon américain ; 0,7 gallon impérial).",
+  "sources": ["Screenshot_20250928_135513_Samsung Notes_031505_1.jpg"]
+}
