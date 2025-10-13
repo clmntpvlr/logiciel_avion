@@ -26,6 +26,7 @@ from PyQt5.QtWidgets import (
     QAbstractItemView,
     QFileDialog,
     QShortcut,
+    QSizePolicy,
 )
 
 from .repository import DatabaseRepository, DuplicateNameError, NotFoundError
@@ -276,6 +277,7 @@ class DatabaseWidget(QWidget):
         # Use NoWheelComboBox to avoid accidental wheel-driven changes
         # when the popup is not open (UX safeguard for the characteristics column)
         combo = NoWheelComboBox()
+        combo.setSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
         combo_items = [(c.id, c.name) for c in self.repo.list_characteristics()]
         for cid, cname in combo_items:
             combo.addItem(cname, cid)
@@ -293,9 +295,16 @@ class DatabaseWidget(QWidget):
             combo.setCurrentIndex(-1)
         combo.currentIndexChanged.connect(lambda _: self._combo_changed(combo))
         combo_container = QWidget()
+        combo_container.setSizePolicy(
+            QSizePolicy.Expanding,
+            QSizePolicy.Preferred,
+        )
         combo_layout = QHBoxLayout(combo_container)
         combo_layout.setContentsMargins(0, 0, 0, 0)
+        combo_layout.setSpacing(0)
+        combo_layout.addStretch()
         combo_layout.addWidget(combo)
+        combo_layout.addStretch()
         combo_layout.setAlignment(Qt.AlignCenter)
         combo_container.setProperty("_value_combo", combo)
         self.table.setCellWidget(row, 0, combo_container)
