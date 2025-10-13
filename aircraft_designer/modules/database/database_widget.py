@@ -26,6 +26,8 @@ from PyQt5.QtWidgets import (
     QAbstractItemView,
     QFileDialog,
     QShortcut,
+    QSizePolicy,
+    QHeaderView,
 )
 
 from .repository import DatabaseRepository, DuplicateNameError, NotFoundError
@@ -143,6 +145,10 @@ class DatabaseWidget(QWidget):
         self.table.verticalHeader().setVisible(False)
         self.table.setSelectionBehavior(QAbstractItemView.SelectRows)
         center_layout.addWidget(self.table)
+        header = self.table.horizontalHeader()
+        header.setSectionResizeMode(0, QHeaderView.Stretch)
+        header.setSectionResizeMode(1, QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(2, QHeaderView.ResizeToContents)
         table_btns = QHBoxLayout()
         center_layout.addLayout(table_btns)
         self.btn_add_value = QPushButton("➕")
@@ -276,6 +282,7 @@ class DatabaseWidget(QWidget):
         # Use NoWheelComboBox to avoid accidental wheel-driven changes
         # when the popup is not open (UX safeguard for the characteristics column)
         combo = NoWheelComboBox()
+        combo.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         combo_items = [(c.id, c.name) for c in self.repo.list_characteristics()]
         for cid, cname in combo_items:
             combo.addItem(cname, cid)
@@ -293,10 +300,19 @@ class DatabaseWidget(QWidget):
             combo.setCurrentIndex(-1)
         combo.currentIndexChanged.connect(lambda _: self._combo_changed(combo))
         combo_container = QWidget()
+        combo_container = QWidget()
+        combo_container.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+
         combo_layout = QHBoxLayout(combo_container)
         combo_layout.setContentsMargins(0, 0, 0, 0)
-        combo_layout.addWidget(combo)
-        combo_layout.setAlignment(Qt.AlignCenter)
+        combo_layout.setSpacing(0)
+
+        # le combo remplit la largeur de la cellule
+        combo.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        combo_layout.addWidget(combo, 1)   # <- stretch factor
+
+        # pas de setAlignment(Qt.AlignCenter), pas de addStretch()
+
         combo_container.setProperty("_value_combo", combo)
         self.table.setCellWidget(row, 0, combo_container)
         val_item = QLineEdit(value)
