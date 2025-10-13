@@ -26,6 +26,7 @@ from PyQt5.QtWidgets import (
     QAbstractItemView,
     QFileDialog,
     QShortcut,
+    QSizePolicy,
 )
 
 from .repository import DatabaseRepository, DuplicateNameError, NotFoundError
@@ -292,7 +293,20 @@ class DatabaseWidget(QWidget):
             # triggers the signal even when it's the only option.
             combo.setCurrentIndex(-1)
         combo.currentIndexChanged.connect(lambda _: self._combo_changed(combo))
-        self.table.setCellWidget(row, 0, combo)
+        combo_container = QWidget()
+        combo_container.setSizePolicy(
+            QSizePolicy.Expanding,
+            QSizePolicy.Preferred,
+        )
+        combo_layout = QHBoxLayout(combo_container)
+        combo_layout.setContentsMargins(0, 0, 0, 0)
+        combo_layout.setSpacing(0)
+        combo_layout.addStretch()
+        combo_layout.addWidget(combo)
+        combo_layout.addStretch()
+        combo_layout.setAlignment(Qt.AlignCenter)
+        combo_container.setProperty("_value_combo", combo)
+        self.table.setCellWidget(row, 0, combo_container)
         val_item = QLineEdit(value)
         val_item.editingFinished.connect(lambda v=val_item, c=combo: self._value_changed(v, c))
         self.table.setCellWidget(row, 1, val_item)
@@ -311,7 +325,9 @@ class DatabaseWidget(QWidget):
     def remove_value_row(self):
         rows = {index.row() for index in self.table.selectedIndexes()}
         for row in sorted(rows, reverse=True):
-            combo = self.table.cellWidget(row, 0)
+            combo = self._combo_from_cell(self.table.cellWidget(row, 0))
+            if combo is None:
+                continue
             char_id = combo.currentData()
             if self.current_aircraft_id and char_id not in (None, -1):
                 self.repo.remove_aircraft_value(self.current_aircraft_id, char_id)
@@ -336,7 +352,7 @@ class DatabaseWidget(QWidget):
                     # Update the unit cell immediately for this row
                     row = -1
                     for r in range(self.table.rowCount()):
-                        if self.table.cellWidget(r, 0) is combo:
+                        if self._combo_from_cell(self.table.cellWidget(r, 0)) is combo:
                             row = r
                             break
                     if row != -1:
@@ -350,7 +366,7 @@ class DatabaseWidget(QWidget):
             # coordinates with the table viewport.
             row = -1
             for r in range(self.table.rowCount()):
-                if self.table.cellWidget(r, 0) is combo:
+                if self._combo_from_cell(self.table.cellWidget(r, 0)) is combo:
                     row = r
                     break
             if row == -1:
@@ -390,8 +406,9 @@ class DatabaseWidget(QWidget):
         for row in range(table.rowCount()):
             name = ""
             w = table.cellWidget(row, 0)
-            if isinstance(w, QComboBox):
-                name = (w.currentText() or "")
+            combo = self._combo_from_cell(w)
+            if combo is not None:
+                name = (combo.currentText() or "")
             else:
                 item = table.item(row, 0)
                 if item is not None:
@@ -410,6 +427,16 @@ class DatabaseWidget(QWidget):
     # Advanced filter: UI handlers
     def _on_filter_op_changed(self, op: str) -> None:
         self.filterVal2Edit.setVisible(op == "in [a,b]")
+
+    def _combo_from_cell(self, widget: QWidget | None) -> QComboBox | None:
+        if isinstance(widget, QComboBox):
+            return widget
+        if widget is None:
+            return None
+        combo = widget.property("_value_combo")
+        if isinstance(combo, QComboBox):
+            return combo
+        return widget.findChild(QComboBox)
 
     def _apply_advanced_filter(self) -> None:
         char_name = (self.filterCharCombo.currentText() or "").strip()
