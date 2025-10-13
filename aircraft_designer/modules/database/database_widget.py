@@ -300,14 +300,19 @@ class DatabaseWidget(QWidget):
             combo.setCurrentIndex(-1)
         combo.currentIndexChanged.connect(lambda _: self._combo_changed(combo))
         combo_container = QWidget()
-        combo_container.setSizePolicy(
-            QSizePolicy.Expanding,
-            QSizePolicy.Preferred,
-        )
+        combo_container = QWidget()
+        combo_container.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+
         combo_layout = QHBoxLayout(combo_container)
         combo_layout.setContentsMargins(0, 0, 0, 0)
         combo_layout.setSpacing(0)
-        combo_layout.addWidget(combo)
+
+        # le combo remplit la largeur de la cellule
+        combo.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        combo_layout.addWidget(combo, 1)   # <- stretch factor
+
+        # pas de setAlignment(Qt.AlignCenter), pas de addStretch()
+
         combo_container.setProperty("_value_combo", combo)
         self.table.setCellWidget(row, 0, combo_container)
         val_item = QLineEdit(value)
