@@ -277,6 +277,7 @@ class DatabaseWidget(QWidget):
         # Use NoWheelComboBox to avoid accidental wheel-driven changes
         # when the popup is not open (UX safeguard for the characteristics column)
         combo = NoWheelComboBox()
+        combo.setSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
         combo_items = [(c.id, c.name) for c in self.repo.list_characteristics()]
         for cid, cname in combo_items:
             combo.addItem(cname, cid)
